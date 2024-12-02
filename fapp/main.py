@@ -13,6 +13,7 @@ async def root():
           <meta charset="utf-8" />
           <title></title>
           <link rel="stylesheet" href="style.css" />
+          <script src="https://yastatic.net/s3/passport-sdk/autofill/v1/sdk-suggest-with-polyfills-latest.js"></script>
         </head>
         <body>
          <script>
