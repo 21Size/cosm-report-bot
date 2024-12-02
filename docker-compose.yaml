@@ -1,0 +1,55 @@
+version: "3.8"
+
+services:
+  tg-bot:
+    container_name: tg-gsheets-assistant-bot
+    build:
+      context: .
+      dockerfile: Dockerfile-bot
+    volumes:
+      - ./bot:/code/bot
+    env_file:
+      - .env
+    networks:
+      - main-net
+
+  data-parser:
+    container_name: parser
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-parser
+    volumes:
+      - ./data_parser:/code/data_parser
+    env_file:
+      - .env
+    networks:
+      - main-net
+
+  disk-api:
+    container_name: fastapi
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-fapp
+    volumes:
+      - ./fapp:/code/fapp
+    env_file:
+      - .env
+    networks:
+      - main-net
+
+  redis:
+    image: redis:latest
+    command: redis-server --requirepass ${REDIS__PASSWORD}
+    ports:
+      - "6379:6379"
+    env_file:
+      - .env
+    networks:
+      - main-net
+
+networks:
+  main-net:
+    name: main-net
+    driver: bridge
