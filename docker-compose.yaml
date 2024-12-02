@@ -26,8 +26,8 @@ services:
     networks:
       - main-net
 
-  disk-api:
-    container_name: fastapi
+  cosm-report-api:
+    container_name: fapi
     restart: always
     build:
       context: .
