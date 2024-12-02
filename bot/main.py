@@ -24,5 +24,5 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
-    setup_logger(ignored=["aioboto3", "boto3", "botocore", "s3transfer", "urllib3"])
+    setup_logger(level="INFO")
     asyncio.run(main())

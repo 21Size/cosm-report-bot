@@ -26,6 +26,10 @@ class GSheetsSettings(BaseSettings):
     cosm_table_id: str
 
 
+class YandexDiskSettings(BaseSettings):
+    auth_token: str
+
+
 class S3Settings(BaseSettings):
     access_key_id: str
     secret_access_key: str
@@ -39,6 +43,7 @@ class Settings(BaseSettings, case_sensitive=False):
     redis: RedisSettings
     tg_bot: TgBotSettings
     gsheets: GSheetsSettings
+    yandex_disk: YandexDiskSettings
     s3: S3Settings
 
 

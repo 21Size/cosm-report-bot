@@ -1626,6 +1626,26 @@ files = [
 ]
 
 [[package]]
+name = "yadisk"
+version = "3.1.0"
+description = "Библиотека-клиент REST API Яндекс.Диска / Yandex.Disk REST API client library"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "yadisk-3.1.0-py3-none-any.whl", hash = "sha256:cddc3a07f541bb005f135e8fbeff6980797494e54b6703c26830ca64d38e00e1"},
+    {file = "yadisk-3.1.0.tar.gz", hash = "sha256:7228fad42007e1ff8becc48ca9bfa357398f68fa50fe597672d4bf92d99e6685"},
+]
+
+[package.extras]
+aiohttp = ["aiohttp"]
+async-defaults = ["aiofiles", "httpx"]
+async-files = ["aiofiles"]
+httpx = ["httpx"]
+pycurl = ["pycurl"]
+requests = ["requests"]
+sync-defaults = ["requests"]
+
+[[package]]
 name = "yarl"
 version = "1.17.1"
 description = "Yet another URL library"
@@ -1724,4 +1744,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "80d9924ce046483727ecb94123e9fb203ca5bda3e9219569e0b72cd1c1aedb2e"
+content-hash = "e31ca458c502007d2ae7f70fe49ef5826c1caa325f141798c0590df00bc9bcd2"
